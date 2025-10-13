@@ -1,0 +1,1 @@
+# NixOS-config-k3s
