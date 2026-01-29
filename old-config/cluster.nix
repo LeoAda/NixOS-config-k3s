@@ -30,5 +30,8 @@
     PrivateMounts = "yes";
     BindPaths = "/run/current-system/sw/bin:/bin";
   };
+  systemd.services.kubelet.serviceConfig = {
+    BindPaths = "/run/current-system/sw/bin:/bin";
+  };
 
 }
