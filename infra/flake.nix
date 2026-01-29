@@ -28,9 +28,9 @@
             isNormalUser = true;
             description = "leo";
             extraGroups = [ "networkmanager" "wheel" ];
-            openssh.authorizedKeys.keyFiles = [
-              ./ssh.pub
-            ];
+            # openssh.authorizedKeys.keyFiles = [
+            #   ./ssh.pub
+            # ];
             initialHashedPassword = "$6$Xg18ngZPapzjw5j1$IA2zCuk7IKW2jb1PBCIQyUARIjO0PJCcxvP49G3j3PGdX.qSUhvMU8MamEfXK8ZfiXMz70Ql16rnlhkFY0FWd1"; #mkpasswd -m sha-512
           };
         })
@@ -56,9 +56,9 @@
             isNormalUser = true;
             description = "leo";
             extraGroups = [ "networkmanager" "wheel" ];
-            openssh.authorizedKeys.keyFiles = [
-              ./ssh.pub
-            ];
+            # openssh.authorizedKeys.keyFiles = [
+            #   ./ssh.pub
+            # ];
             initialHashedPassword = "$6$Xg18ngZPapzjw5j1$IA2zCuk7IKW2jb1PBCIQyUARIjO0PJCcxvP49G3j3PGdX.qSUhvMU8MamEfXK8ZfiXMz70Ql16rnlhkFY0FWd1";
           };
         })
