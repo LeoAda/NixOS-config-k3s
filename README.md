@@ -1,12 +1,11 @@
 # NixOS-config-k3s
-
+## On wsl nixos
 sudo nixos-rebuild switch
-
-venv :
-cd venv
-nix run
-
 nix flake init 
+## To build proxmox image
+nix build .#packages.x86_64-linux.proxmox
+## Update image
 
-
-nix build .#proxmox
+cd ~/NixOS-config-k3s/infra
+sudo git pull
+sudo nixos-rebuild switch --flake .#k3s-server
