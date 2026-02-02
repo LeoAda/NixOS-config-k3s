@@ -37,5 +37,9 @@
     ln -sf /run/current-system/sw/bin/mount /bin/mount
     ln -sf /run/current-system/sw/bin/umount /bin/umount
   '';
+  systemd.tmpfiles.rules = [
+    "L+ /bin/mount - - - - /run/current-system/sw/bin/mount"
+    "L+ /bin/umount - - - - /run/current-system/sw/bin/umount"
+  ];
   system.stateVersion = "25.11";
 }
