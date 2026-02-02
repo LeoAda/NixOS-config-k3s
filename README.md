@@ -8,4 +8,5 @@ nix build .#packages.x86_64-linux.proxmox
 
 cd ~/NixOS-config-k3s/infra
 sudo git pull
+cd infra
 sudo nixos-rebuild switch --flake .#k3s-server

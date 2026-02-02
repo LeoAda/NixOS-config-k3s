@@ -32,8 +32,10 @@
     PrivateMounts = "yes";
     BindPaths = "/run/current-system/sw/bin:/bin";
   };
-  systemd.services.k3s.serviceConfig = {
-    BindPaths = "/run/current-system/sw/bin:/bin";
-  };
+  system.activationScripts.binMount = ''
+    mkdir -p /bin
+    ln -sf /run/current-system/sw/bin/mount /bin/mount
+    ln -sf /run/current-system/sw/bin/umount /bin/umount
+  '';
   system.stateVersion = "25.11";
 }
