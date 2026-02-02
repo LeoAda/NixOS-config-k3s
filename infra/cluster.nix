@@ -1,6 +1,6 @@
 { config,pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ nfs-utils openiscsi k3s ];
+  environment.systemPackages = with pkgs; [ nfs-utils openiscsi k3s  ];
   ## Network
   networking.firewall.allowedTCPPorts = [
     6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
@@ -32,7 +32,7 @@
     PrivateMounts = "yes";
     BindPaths = "/run/current-system/sw/bin:/bin";
   };
-  systemd.services.kubelet.serviceConfig = {
+  systemd.services.k3s.serviceConfig = {
     BindPaths = "/run/current-system/sw/bin:/bin";
   };
   system.stateVersion = "25.11";
